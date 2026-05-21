@@ -173,7 +173,7 @@ const parse = function (a, b) {
       case 'string':
 
         z['im'] = /* void */
-          z['re'] = 0;
+        z['re'] = 0;
 
         const tokens = a.replace(/_/g, '')
           .match(/\d+\.?\d*e[+-]?\d+|\d+\.?\d*|\.\d+|./g);
@@ -514,16 +514,10 @@ Complex.prototype = {
       }
     }
 
-    const r = hypot(a, b);
+    const r = hypot(a, b) + a;
+    const d = Math.sqrt(2 * r);
 
-    let re = Math.sqrt(0.5 * (r + Math.abs(a))); // sqrt(2x) / 2 = sqrt(x / 2)
-    let im = Math.abs(b) / (2 * re);
-
-    if (a >= 0) {
-      return new Complex(re, b < 0 ? -im : im);
-    } else {
-      return new Complex(im, b < 0 ? -re : re);
-    }
+    return new Complex(r / d, b / d);
   },
 
   /**

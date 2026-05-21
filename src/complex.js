@@ -1,8 +1,8 @@
 /**
- * @license Complex.js v2.4.3 11/13/2025
+ * @license Complex.js v2.4.3 5/21/2026
  * https://raw.org/article/complex-numbers-in-javascript/
  *
- * Copyright (c) 2025, Robert Eisele (https://raw.org/)
+ * Copyright (c) 2026, Robert Eisele (https://raw.org/)
  * Licensed under the MIT license.
  **/
 
@@ -520,16 +520,10 @@ Complex.prototype = {
       }
     }
 
-    const r = hypot(a, b);
+    const r = hypot(a, b) + a;
+    const d = Math.sqrt(2 * r);
 
-    let re = Math.sqrt(0.5 * (r + Math.abs(a))); // sqrt(2x) / 2 = sqrt(x / 2)
-    let im = Math.abs(b) / (2 * re);
-
-    if (a >= 0) {
-      return new Complex(re, b < 0 ? -im : im);
-    } else {
-      return new Complex(im, b < 0 ? -re : re);
-    }
+    return new Complex(r / d, b / d);
   },
 
   /**

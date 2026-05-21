@@ -42,7 +42,7 @@ var functionTests = [{
 }, {
   set: "36i",
   fn: "sqrt",
-  expect: "4.242640687119285 + 4.242640687119286i"
+  expect: "4.242640687119286 + 4.242640687119286i"
 }, {
   set: Infinity,
   fn: "mul",
@@ -51,7 +51,7 @@ var functionTests = [{
 }, {
   set: "-36i",
   fn: "sqrt",
-  expect: "4.242640687119285 - 4.242640687119286i"
+  expect: "4.242640687119286 - 4.242640687119286i"
 }, {
   set: "4 + 2i",
   fn: "div",
@@ -456,7 +456,7 @@ var functionTests = [{
 }, {
   set: "1 + 4i",
   fn: "sqrt",
-  expect: "1.600485180440241 + 1.2496210676876531i"
+  expect: "1.6004851804402407 + 1.2496210676876531i"
 }, {
   set: { re: -3, im: 4 },
   fn: "sqrt",
@@ -934,7 +934,7 @@ describe("Complex Details", function () {
     assert.strictEqual(one.log().toString(), "0.34657359027997264 + 0.7853981633974483i");
     assert.strictEqual(one.pow(one).toString(), "0.2739572538301211 + 0.5837007587586147i");
     assert.strictEqual(one.pow(zero).toString(), "1");
-    assert.strictEqual(one.sqrt().toString(), "1.09868411346781 + 0.45508986056222733i");
+    assert.strictEqual(one.sqrt().toString(), "1.0986841134678098 + 0.45508986056222733i");
     assert.strictEqual(one.sin().toString(), "1.2984575814159773 + 0.6349639147847361i");
     assert.strictEqual(one.cos().toString(), "0.8337300251311491 - 0.9888977057628651i");
     assert.strictEqual(one.tan().toString(), "0.27175258531951174 + 1.0839233273386948i");
